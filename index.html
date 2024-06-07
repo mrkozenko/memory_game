@@ -1,120 +1,40 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">  
-    <title>Memory Card Game | CodingNepal</title>
-    <link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div class="wrapper">
-      <ul class="cards">
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-1.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-2.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-3.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-4.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-5.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-6.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-5.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-6.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-1.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-2.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-3.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="images/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="images/img-4.png" alt="card-img">
-          </div>
-        </li>
-        <div class="details">
-          <p class="time">Time: <span><b>20</b>s</span></p>
-          <p class="flips">Flips: <span><b>0</b></span></p>
-          <button>Refresh</button>
+    <title>Game Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon-container">
+                <span class="count">15</span>
+                <img src="./images/coin_logo.png" alt="icon" class="icon">
+            </div>
+            <div class="share-container">
+                <img src="./images/share.png" alt="share" class="share">
+            </div>
         </div>
-      </ul>
+        <div class="tree-container">
+            <img src="./images/tree.png" alt="tree" class="tree">
+            <img src="./images/squirell_run.gif" alt="squirrel" class="squirrel">
+        </div>
+        <button class="hunt-button" onclick="startHunt()" id="hunt_button">Начать охоту</button>
+        <div class="timer">Таймер 00:00:00</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="footer">
+            <div class="footer-item">Друзья</div>
+            <div class="footer-item">Рейтинг</div>
+            <div class="footer-item"><i class="fa-solid fa-shop"></i> <p>Магазин</p></div>
+            <div class="footer-item">Задания</div>
+            <div class="footer-item">Коллекция</div>
+        </div>
     </div>
-
-    <script src="script.js"></script>
-    
-  </body>
+    <script src="./scripts/main.js"></script>
+</body>
 </html>
