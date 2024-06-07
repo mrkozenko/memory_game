@@ -2,7 +2,8 @@ function startHunt() {
     startTimer();
 }
 document.querySelectorAll('.footer-item').forEach(item => {
-    item.onclick = handleFooterClick;
+    item.addEventListener('click', handleFooterClick);
+    item.addEventListener('touchstart', handleFooterClick);
 });
 function startTimer() {
     let timerElement = document.querySelector('.timer');
