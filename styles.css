@@ -90,9 +90,11 @@ body {
     margin: 20px auto;
     overflow: hidden;
     position: relative;
+    visibility: hidden;
 }
 
 .progress {
+    border: solid 5px;
     width: 0%;
     height: 20px;
     background: url('./images/pixel-progress.png') repeat;
@@ -110,9 +112,11 @@ body {
     bottom: 0;
     width: 100%;
     max-width: 500px;
+    
 }
 
 .footer-item {
     cursor: pointer;
     font-size: 16px;
+    margin-right: 20px;
 }

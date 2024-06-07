@@ -14,41 +14,44 @@
                 <span class="count">15</span>
                 <img src="./images/coin_logo.png" alt="icon" class="icon">
             </div>
-            <div class="share-container">
-                <img src="./images/share.png" alt="share" class="share">
+            <div class="share-container" style="margin-right: 25px;">
+                <span class="count" style="margin-right: 7px;" id="trapCount">15</span>
+                <img src="./images/trap.png" alt="share" class="share">
             </div>
         </div>
         <div class="tree-container">
             <img src="./images/tree.png" alt="tree" class="tree">
             <img src="./images/squirell_run.gif" alt="squirrel" class="squirrel">
         </div>
+        <div class="timer">00:00:00</div>
         <button class="hunt-button" onclick="startHunt()" id="hunt_button">Начать охоту</button>
-        <div class="timer">Таймер 00:00:00</div>
+       
         <div class="progress-bar">
             <div class="progress"></div>
         </div>
         <div class="footer">
-            <div class="footer-item">
+            <div class="footer-item" data-action="friends">
                 <i class="fas fa-home"></i>
                 Друзья
             </div>
-            <div class="footer-item">
+            <div class="footer-item" data-action="rating">
                 <i class="fas fa-star"></i>
                 Рейтинг
             </div>
-            <div class="footer-item">
+            <div class="footer-item" data-action="store">
                 <i class="fas fa-store"></i>
                 Магазин
             </div>
-            <div class="footer-item">
+            <div class="footer-item" data-action="tasks">
                 <i class="fas fa-tasks"></i>
                 Задания
             </div>
-            <div class="footer-item">
+            <div class="footer-item" data-action="warehouse">
                 <i class="fas fa-box"></i>
-                Коллекция
+                Склад
             </div>
         </div>
+        
     </div>
     <script src="./scripts/main.js"></script>
 </body>
