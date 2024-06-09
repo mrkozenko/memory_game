@@ -62,31 +62,56 @@ function handleFooterClick(event) {
     
 }
 
+
+function createDiamond(event) {
+    const diamond = document.createElement('div');
+    diamond.className = 'diamond';
+    diamond.style.left = `${event.clientX - 10}px`;
+    diamond.style.top = `${event.clientY - 10}px`;
+
+    // Выбираем случайную анимацию
+    const animations = ['fly-down', 'fly-sideways','break-opposite'];
+    const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+    diamond.style.animationName = randomAnimation;
+
+    document.body.appendChild(diamond);
+
+    // Удаляем алмаз после анимации
+    setTimeout(() => {
+        diamond.remove();
+    }, 1000);
+}
+
 document.getElementById('tree').addEventListener('click', (event) => {
     const tree = document.getElementById('tree');
-    tree.style.transform = 'scale(1.1)';
+    tree.style.transform = 'scale(1.2)';
     setTimeout(() => {
         tree.style.transform = 'scale(1)';
     }, 200);
 
     // Создаем алмазы
     for (let i = 0; i < 5; i++) {
-        const diamond = document.createElement('div');
-        diamond.className = 'diamond';
-        diamond.style.left = `${event.clientX - 10}px`;
-        diamond.style.top = `${event.clientY - 10}px`;
-
-        // Случайное направление
-        const angle = Math.random() * 2 * Math.PI;
-        const distance = 100;
-        diamond.style.setProperty('--x', Math.cos(angle) * distance);
-        diamond.style.setProperty('--y', Math.sin(angle) * distance);
-
-        document.body.appendChild(diamond);
-
-        // Удаляем алмаз после анимации
-        setTimeout(() => {
-            diamond.remove();
-        }, 1500);
+        createDiamond(event);
     }
+});
+
+document.getElementById('tree').addEventListener('touchstart', (event) => {
+    event.preventDefault(); // Предотвращаем двойные вызовы для multitouch
+    const tree = document.getElementById('tree');
+    tree.style.transform = 'scale(1.2)';
+    setTimeout(() => {
+        tree.style.transform = 'scale(1)';
+    }, 200);
+
+    // Создаем алмазы для каждого касания
+    for (let touch of event.touches) {
+        for (let i = 0; i < 5; i++) {
+            createDiamond(touch);
+        }
+    }
+});
+
+// Запрещаем выделение текста при двойном клике и перетаскивании
+document.getElementById('tree').addEventListener('mousedown', (event) => {
+    event.preventDefault();
 });

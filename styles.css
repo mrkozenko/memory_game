@@ -131,13 +131,49 @@ body {
     background-size: contain;
     animation: fly 1s forwards;
 }
-@keyframes fly {
+@keyframes fly-down {
     from {
         opacity: 1;
-        transform: translate(0, 0);
+        transform: translateY(0) rotate(0deg);
     }
     to {
         opacity: 0;
-        transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
+        transform: translateY(200px) rotate(720deg);
+    }
+}
+@keyframes fly-sideways {
+    from {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(200px) rotate(720deg);
+    }
+}
+@keyframes break {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50px, -50px) rotate(-720deg);
+    }
+}
+@keyframes break-opposite {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(50px, 50px) rotate(720deg);
     }
 }
