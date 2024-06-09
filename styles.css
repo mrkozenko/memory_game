@@ -53,6 +53,8 @@ body {
 
 .tree {
     width: 280px; /* Увеличено с 150px до 200px */
+    transition: transform 0.2s ease-in-out;
+    user-select: none; /* Запрещаем выделение */
 }
 
 .squirrel {
@@ -119,4 +121,23 @@ body {
     cursor: pointer;
     font-size: 16px;
     margin-right: 20px;
+}
+
+.diamond {
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    background: url('./images/stick.webp') no-repeat center center;
+    background-size: contain;
+    animation: fly 1s forwards;
+}
+@keyframes fly {
+    from {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
+    }
 }

@@ -5,6 +5,7 @@ document.querySelectorAll('.footer-item').forEach(item => {
     item.addEventListener('click', handleFooterClick);
     item.addEventListener('touchstart', handleFooterClick);
 });
+
 function startTimer() {
     let timerElement = document.querySelector('.timer');
     let progressElement = document.querySelector('.progress');
@@ -58,4 +59,34 @@ function handleFooterClick(event) {
         default:
             alert('Неизвестное действие');
     }
+    
 }
+
+document.getElementById('tree').addEventListener('click', (event) => {
+    const tree = document.getElementById('tree');
+    tree.style.transform = 'scale(1.1)';
+    setTimeout(() => {
+        tree.style.transform = 'scale(1)';
+    }, 200);
+
+    // Создаем алмазы
+    for (let i = 0; i < 5; i++) {
+        const diamond = document.createElement('div');
+        diamond.className = 'diamond';
+        diamond.style.left = `${event.clientX - 10}px`;
+        diamond.style.top = `${event.clientY - 10}px`;
+
+        // Случайное направление
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = 100;
+        diamond.style.setProperty('--x', Math.cos(angle) * distance);
+        diamond.style.setProperty('--y', Math.sin(angle) * distance);
+
+        document.body.appendChild(diamond);
+
+        // Удаляем алмаз после анимации
+        setTimeout(() => {
+            diamond.remove();
+        }, 1500);
+    }
+});
